@@ -1,0 +1,111 @@
+/*--------------------
+Body
+--------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: calc(10px + 1vw);
+  font-family: Roboto,sans-serif;
+  color: #fff;
+  background: #121f26;
+  letter-spacing: .02em;
+  line-height: 1.7;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: calc(10px + 4vw);
+  color: #fff;
+  line-height: 1.2;
+  margin: 2vw 0;
+}
+h1:first-child {
+  margin-top: 0;
+}
+
+main {
+  background: -webkit-gradient(linear, left top, left bottom, from(#f7455f), color-stop(#f57a0c), to(#e6b30b));
+  background: linear-gradient(to bottom, #f7455f, #f57a0c, #e6b30b);
+}
+
+/*---------------
+Supahscroll
+---------------*/
+.supah-scroll {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  will-change: transform;
+  overflow: hidden;
+}
+
+/*---------------
+Nav
+---------------*/
+.nav {
+  position: fixed;
+  z-index: 100;
+  padding: 30px 5vw;
+  right: 0;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  overflow: hidden;
+  pointer-events: none;
+  mix-blend-mode: color-dodge;
+}
+.nav__logo {
+  display: -webkit-box;
+  display: flex;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  pointer-events: all;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+section {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  padding: 100px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 1vw 5vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+.text {
+  padding: 4vw 0;
+}

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Webpixels">
+    <title>V-GOOD 비건을 위한 웹사이트</title>
+    <!-- Preloader -->
+    <style>
+        @keyframes hidePreloader {
+            0% {
+                width: 100%;
+                height: 100%;
+            }
+
+            100% {
+                width: 0;
+                height: 0;
+            }
+        }
+
+        body>div.preloader {
+            position: fixed;
+            background: white;
+            width: 100%;
+            height: 100%;
+            z-index: 1071;
+            opacity: 0;
+            transition: opacity .5s ease;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body:not(.loaded)>div.preloader {
+            opacity: 1;
+        }
+
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+
+        body.loaded>div.preloader {
+            animation: hidePreloader .5s linear .5s forwards;
+        }
+        
+        <!--사진 설명글 -->
+        @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+figure.snip1200 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  max-height: 310px;
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+}
+figure.snip1200 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.45s ease-in-out;
+  transition: all 0.45s ease-in-out;
+}
+figure.snip1200 img {
+  max-width: 100%;
+  position: relative;
+  opacity: 0.9;
+}
+figure.snip1200 figcaption {
+  position: absolute;
+  top: 45%;
+  left: 7%;
+  right: 7%;
+  bottom: 45%;
+  border-width: 1px 1px 0;
+}
+figure.snip1200 .heading {
+  overflow: hidden;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+figure.snip1200 h2 {
+  display: table;
+  margin: 0 auto;
+  padding: 0 10px;
+  position: relative;
+  text-align: center;
+  width: auto;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+figure.snip1200 h2 span {
+  font-weight: 800;
+}
+figure.snip1200 h2:before,
+figure.snip1200 h2:after {
+  position: absolute;
+  display: block;
+  width: 1000%;
+  height: 1px;
+  content: '';
+  background: white;
+  top: 50%;
+}
+figure.snip1200 h2:before {
+  left: -1000%;
+}
+figure.snip1200 h2:after {
+  right: -1000%;
+}
+figure.snip1200 p {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0;
+  opacity: 0;
+  line-height: 1.6em;
+  font-size: 1em;
+  color: darkslategray;
+  font-weight: bold;
+    
+}
+figure.snip1200 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+figure.snip1200:hover img,
+figure.snip1200.hover img {
+  opacity: 0.25;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+figure.snip1200:hover figcaption,
+figure.snip1200.hover figcaption {
+  top: 7%;
+  bottom: 7%;
+}
+figure.snip1200:hover p,
+figure.snip1200.hover p {
+  opacity: 1;
+  -webkit-transition-delay: 0.35s;
+  transition-delay: 0.35s;
+}
+        
+        
+<!--위로가기-->
+.ScrollButton {
+  position: fixed;   /* 버튼의 위치 고정 */
+  right: 10px;       /* x 위치 입력 */
+  cursor: pointer;   /* 호버링 했을 때 커서 모양 변경 */
+  z-index: 10;       /* 다른 태그에 가려지지 않게 우선순위 변경 */
+  display: none;     /* 스크롤 위치에 상관없이 보이게 하려면 생략 */
+}
+/* 두 태그에 각각 y 위치 입력 */
+#TopButton {
+  position: fixed;
+  left: 95%;
+  bottom: 50px;
+  
+}
+#chatbot {
+  position: fixed;
+  left: 95%;
+  bottom: 120px;
+  
+}
+    </style>
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        //위로가기
+   $(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 600) {
+            $('.ScrollButton').fadeIn();
+        } else {
+            $('.ScrollButton').fadeOut();
+        }
+    });
+        
+    $("#TopButton").click(function() {
+        $('html').animate({scrollTop : 0}, 600);
+    });
+ 
+    $("#BottomButton").click(function() {
+        $('html').animate({scrollTop : ($('#footer').offset().top)}, 600);
+    });
+});
+
+$(function(){
+    $("#chatbot").click(function(){
+        alert("Coming soon...🛠");
+    });
+});
+</script>
+    <script>
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                document.querySelector('body').classList.add('loaded');
+            }, 300);
+        });
+        
+   
+     $(".hover").mouseleave(
+        function () {
+        $(this).removeClass("hover");
+    }
+  );
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/vegan/logo2.png" type="image/png"><!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/libs/@fortawesome/fontawesome-free/css/all.min.css">
+    <!-- Quick CSS -->
+    <link rel="stylesheet" href="assets/css/quick-website.css" id="stylesheet">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-cookies" data-backdrop="false" aria-labelledby="modal-cookies" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-aside left-4 right-4 bottom-4">
+            <div class="modal-content bg-dark-dark">
+                <div class="modal-body">
+                    <!-- Text -->
+                    <p class="text-sm text-white mb-3">
+                        We use cookies so that our themes work for you. By using our website, you agree to our use of cookies.
+                    </p>
+                    <!-- Buttons -->
+                    <a href="pages/utility/terms.html" class="btn btn-sm btn-white" target="_blank">Learn more</a>
+                    <button type="button" class="btn btn-sm btn-primary mr-2" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html">
+                <img alt="Image placeholder" src="assets/img/vegan/logo.PNG" style="height: 50px" ; id="navbar-logo">
+            </a>
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
+
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+
+                        <a class="nav-link" href="category.html" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" style="color: seagreen;">카테고리</a>
+                        <div class="dropdown-menu dropdown-menu-single">
+                            <a href="category.html#food-index" class="dropdown-item">Vegan Food</a>
+                            <a href="category.html#fashion-index" class="dropdown-item">Vegan Fashion</a>
+                            <a href="category.html#cosmetic-index" class="dropdown-item">Vegan Cosmetic</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item"></a>
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="about_vegan.html">비건이야기</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="support.html">후원하기</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="aboutus.html">개발자들</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="login.html">로그인</a>
+                    </li>
+
+                </ul>
+
+                <!-- Mobile button -->
+                <div class="d-lg-none text-center">
+                    <a href="https://webpixels.io/themes/quick-website-ui-kit"
+                        class="btn btn-block btn-sm btn-warning">상세정보 더보기</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main content -->
+    
+        <!-- Container -->
+        
+    <section class="slice slice-lg">
+        <div class="container">
+           <h1 style="text-align: center;">후원하기</h1>
+           <p style="text-align: center;">당신의 작은 관심이 동물과 환경에 큰 도움이 됩니다.🌱🐰</p>
+           <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+                        <div class="px-5 pb-5 pt-5">
+                            <div class="py-4">
+                                <div class="icon text-warning icon-sm mx-auto">
+                                   <figure class="snip1200">
+                                   <img src=assets/img/support/support1.png style="width:200px; height: 150px"/>
+<!--                                </div>-->
+                                <figcaption>
+                                    <p>'고통을 호소하는 모든 생명체는 그 고통을 해소받을 권리가 있다' 라는 슬로건으로 1999년부터 동물권 및 동물복지를 위해 활동하고 있는<br> 비영리 단체이다.</p>
+                                </figcaption>
+                                <a href="https://www.animals.or.kr/"></a>
+                                </figure>
+                                </div>
+                            </div>
+                            <h5 class=""></h5>
+                            <p class=" mt-2 mb-0">동물자유연대</p>
+                            <div class="mt-4">
+                                <a href="#" class="link-underline-warning">클릭해보세요!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+                        <div class="px-5 pb-5 pt-5">
+                            <div class="py-4">
+                                <div class="icon text-warning icon-sm mx-auto">
+                                    <figure class="snip1200"><img src=assets/img/support/support2.png style="width:200px; height: 150px"/>
+<!--                                </div>-->
+                                <figcaption>
+                                    <p>대국민 교육사업, 동물보호사업 수행 등을 통한 사람과 동물의 올바른 관계 정립 유도, 동물의 권리 침해문제 해결,생명존중 사회 구현 및 동물보호·복지 증진 추진 목적을 가지고 <br>설립된 단체이다.</p>
+                                </figcaption>
+                                <a href="https://www.ekara.org/"></a>
+                                </figure>
+                                </div>
+                            </div>
+                            <h5 class=""></h5>
+                            <p class=" mt-2 mb-0">동물권행동 카라</p>
+                            <div class="mt-4">
+                                <a href="#" class="link-underline-warning">클릭해보세요!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+                        <div class="px-5 pb-5 pt-5">
+                            <div class="py-4">
+                                <div class="icon text-warning icon-sm mx-auto">
+                                  <figure class="snip1200"><img src=assets/img/support/support3.PNG style="width:200px; height: 150px">
+                                <figcaption>
+                                    <p>독립적인 국제환경단체로 지구 환경보호와 평화를 위해 평화적인 방식으로 캠페인을 진행하고 있다. <br>전 지구적인 환경문제의 원인을<br> 밝혀내고, 이를 해결하기 위해 평화적이고 창의적인 방식으로 활동하는<br> 캠페인 단체이다.</p>
+                                </figcaption>
+                                <a href="https://www.greenpeace.org/korea/"></a>
+                                </figure>
+                                </div>
+                            </div>
+                            <h5 class=""></h5>
+                            <p class=" mt-2 mb-0">그린피스</p>
+                            <div class="mt-4">
+                                <a href="#" class="link-underline-warning">클릭해보세요!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slice slice-lg" id="sct-form-contact">
+        <div class="container position-relative zindex-100">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6 text-center">
+                    <h3>Contact us</h3>
+                    <p class="lh-190">만약, Vgood 사이트에 대해 궁금하신게 있다면 연락처를 남겨주세요.😉 </p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <!-- Form -->
+                    <form>
+                        <div class="form-group">
+                            <input class="form-control form-control-lg" type="text" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control form-control-lg" type="email" placeholder="email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control form-control-lg" type="text" placeholder="PhoneNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control form-control-lg" placeholder="Message ..." rows="3" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <!-- <div class="g-recaptcha" data-sitekey="6Lfs5ScUAAAAANAJwGrdfvWLFRRiVbKRE2vfoaFj"></div> -->
+                            <button type="reset" class="btn-reset d-none"></button>
+                            <button type="submit" class="btn btn-block btn-lg btn-primary mt-4" style="background-color:  forestgreen; border-style: none;">전송하기</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="position-relative" id="footer-main">
+        <div class="footer pt-lg-7">
+            <!-- SVG shape -->
+            <!-- <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
+                <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px"
+                    viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve"
+                    class=" fill-section-secondary">
+                    <polygon points="2560 0 2560 100 0 100"></polygon>
+                </svg>
+            </div> -->
+            <!-- Footer -->
+            <div class="container pt-4">
+                <div class="row">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <!-- Theme's logo -->
+                        <a href="index.html">
+                            <img alt="Image placeholder" src="assets/img/vegan/logo2.png" id="footer-logo"
+                                style="height: 80px;">
+                        </a>
+                        <!-- Webpixels' mission -->
+                        <p class="mt-4 text-sm opacity-8 pr-lg-4">일상에서 비거니즘을 실천할 수 있도록<br> Vgood이 도와드립니다.</p>
+                        <!-- Social -->
+                        <ul class="nav mt-4">
+                            <li class="nav-item">
+                                <a class="nav-link pl-0" href="https://dribbble.com/webpixels" target="_blank">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://github.com/webpixels" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.instagram.com/webpxs" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.facebook.com/webpixels" target="_blank">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
+                        <h6 class="heading mb-3">계정</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">프로필</a></li>
+                            <li><a href="#">설정</a></li>
+                            <li><a href="#">구매정보</a></li>
+                            <li><a href="#">알림</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
+                        <h6 class="heading mb-3">세부정보</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">서비스</a></li>
+                            <li><a href="#">가격</a></li>
+                            <li><a href="#">연락처</a></li>
+                            <li><a href="#">채용</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
+                        <h6 class="heading mb-3">Company</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">커뮤니티</a></li>
+                            <li><a href="#">지원센터</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="divider divider-fade divider-dark my-4">
+                <div class="row align-items-center justify-content-md-between pb-4">
+                    <div class="col-md-6">
+                        <div class="copyright text-sm font-weight-bold text-center text-md-left">
+                            &copy; 2020 <a href="#" class="font-weight-bold" target="_blank"
+                                style="color:olivedrab">V-GOOD</a>. All rights reserved
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    이용약관
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    개인정보처리방침
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    쿠키
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Core JS  -->
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/svg-injector/dist/svg-injector.min.js"></script>
+    <script src="assets/libs/feather-icons/dist/feather.min.js"></script>
+    <!-- Page JS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1oALsXLX-XEh2iYbE8tOjxsdFNHE39WM"></script>
+    <!-- Quick JS -->
+    <script src="assets/js/quick-website.js"></script>
+    <!-- Feather Icons -->
+    <script>
+        feather.replace({
+            'width': '1em',
+            'height': '1em'
+        })
+    </script>
+<a href="#" id="TopButton"><img src="assets/img/icon/topbutton.jpg" style="width: 45px;"></a>
+<div id="chatbot" onclick="chatbot()"><img src="assets/img/icon/chatbot.png" style="width: 45px;"></div>
+
+</body>
+
+</html>

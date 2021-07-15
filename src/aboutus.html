@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Webpixels">
+    <title>V-GOOD 비건을 위한 웹사이트</title>
+    
+
+    <style>
+        .ScrollButton {
+        position: fixed;   /* 버튼의 위치 고정 */
+        right: 10px;       /* x 위치 입력 */
+        cursor: pointer;   /* 호버링 했을 때 커서 모양 변경 */
+        z-index: 10;       /* 다른 태그에 가려지지 않게 우선순위 변경 */
+        display: none;     /* 스크롤 위치에 상관없이 보이게 하려면 생략 */
+         }
+        /* 두 태그에 각각 y 위치 입력 */
+        #TopButton {
+        position: fixed;
+        left: 95%;
+        bottom: 50px;
+    
+        }
+        #chatbot {
+        position: fixed;
+        left: 95%;
+        bottom: 120px;
+    
+        }
+        body>div.preloader {
+            position: fixed;
+            background: white;
+            width: 100%;
+            height: 100%;
+            z-index: 1071;
+            opacity: 0;
+            transition: opacity .5s ease;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body:not(.loaded)>div.preloader {
+            opacity: 1;
+        }
+
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+
+        body.loaded>div.preloader {
+            animation: hidePreloader .5s linear .5s forwards;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                document.querySelector('body').classList.add('loaded');
+            }, 300);
+        });
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/vegan/logo2.png" type="image/png">
+    <link rel="stylesheet" href="assets/libs/@fortawesome/fontawesome-free/css/all.min.css">
+    <!-- Quick CSS -->
+    <link rel="stylesheet" href="assets/css/quick-website.css" id="stylesheet">
+    <!--Mouse Over CSS-->
+    <link rel="stylesheet" href="assets/css/about.css" type="text/css">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html">
+                <img alt="Image placeholder" src="assets/img/vegan/logo.PNG" style="height: 50px" ; id="navbar-logo">
+            </a>
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
+
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+
+                        <a class="nav-link" href="category.html" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" style="color: seagreen;">카테고리</a>
+                        <div class="dropdown-menu dropdown-menu-single">
+                            <a href="category.html#food-index" class="dropdown-item">Vegan Food</a>
+                            <a href="category.html#fashion-index" class="dropdown-item">Vegan Fashion</a>
+                            <a href="category.html#cosmetic-index" class="dropdown-item">Vegan Cosmetic</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item"></a>
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="about_vegan.html">비건이야기</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="support.html">후원하기</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="aboutus.html">개발자들</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="login.html">로그인</a>
+                    </li>
+
+                </ul>
+
+                <!-- Mobile button -->
+                <div class="d-lg-none text-center">
+                    <a href="https://webpixels.io/themes/quick-website-ui-kit"
+                        class="btn btn-block btn-sm btn-warning">상세정보 더보기</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main content -->
+
+    <section class="slice slice-lg pb-5">
+        <div class="container">
+            <!-- Section title -->
+            <div class="row mb-10 justify-content-center text-center">
+                <div class="col-lg-5 col-md-10">
+                    <div class="circle"></div>
+                    <div class="text"><big><big>About us<br>
+                                            <small>GOOD MEMBERS</small></big></big></div>
+                    
+                </div>
+            </div>
+            <div class="row ml-6" >             
+                <figure class=" snip1384">
+                    <img src="assets/img/aboutus/john.png" alt="sample83" />
+                    <figcaption>
+                      <h3>Ahn Y.H</h3>
+                      <p>Profile</p><i class="ion-ios-arrow-right"></i>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+
+                  <figure class="snip1384">
+                    <img src="assets/img/aboutus/soon2.png" alt="sample83" />
+                    <figcaption>
+                      <h3>Kwon S</h3>
+                      <p>Main</p><i class="ion-ios-arrow-right"></i>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+
+                  <figure class="snip1384">
+                    <img src="assets/img/aboutus/hyun.png" alt="sample83" />
+                    <figcaption>
+                      <h3>Yang H.J</h3>
+                      <p>Login</p><i class="ion-ios-arrow-right"></i>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+
+                  <figure class="snip1384">
+                    <img src="assets/img/aboutus/Eunbi2.png" alt="sample83" />
+                    <figcaption>
+                      <h3>Kim E.B</h3>
+                      <p>Story & Donate</p><i class="ion-ios-arrow-right"></i>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+
+                  <figure class="snip1384">
+                    <img src="assets/img/aboutus/joo2.png" alt="sample83" />
+                    <figcaption>
+                      <h3>Joo B.A</h3>
+                      <p>Menu & Category</p><i class="ion-ios-arrow-right"></i>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+
+                  <figure class="snip1384">
+                    <img src="assets/img/aboutus/Hwakyung2.png" alt="sample83" />
+                    <figcaption>
+                      <h3>Kim H.K</h3>
+                      <p>Menu & Category</p><i class="ion-ios-arrow-right"></i>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+
+                  
+            </div>
+        </div>
+    </section>
+   
+    
+    
+    <!-- Core JS  -->
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/svg-injector/dist/svg-injector.min.js"></script>
+    <script src="assets/libs/feather-icons/dist/feather.min.js"></script>
+    <!-- Quick JS -->
+    <script src="assets/js/quick-website.js"></script>
+    <!-- Feather Icons -->
+    <script>
+        feather.replace({
+            'width': '1em',
+            'height': '1em'
+        })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        //위로가기
+   $(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 600) {
+            $('.ScrollButton').fadeIn();
+        } else {
+            $('.ScrollButton').fadeOut();
+        }
+    });
+        
+    $("#TopButton").click(function() {
+        $('html').animate({scrollTop : 0}, 600);
+    });
+ 
+    $("#BottomButton").click(function() {
+        $('html').animate({scrollTop : ($('#footer').offset().top)}, 600);
+    });
+});
+
+$(function(){
+    $("#chatbot").click(function(){
+        alert("Coming soon…🛠");
+    });
+});
+</script>
+
+<script>
+
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);
+</script>
+
+<a href="#" id="TopButton"><img src="assets/img/icon/topbutton.jpg" style="width: 45px;"></a>
+<div id="chatbot" onclick="chatbot()"><img src="assets/img/icon/chatbot.png" style="width: 45px;"></div>
+
+</body>
+</html>

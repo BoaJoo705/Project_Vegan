@@ -1,0 +1,152 @@
+.btn-custom{
+    color: #fff;
+    border-color: #1c8b47;
+    background-color: #1c8b47;
+    box-shadow: none;
+}
+
+.btn-pink{
+    color: #fff;
+    border-color:rgb(255, 168, 182);
+    background-color: pink;
+    box-shadow: none;
+}
+.btn:hover{
+    text-decoration: none; 
+    color: black;
+}
+
+.text-red{
+    color:red;
+}
+
+.text-black{
+    color:black;
+}
+
+.carousel-text-container{
+    position: relative;
+}
+
+#slider{
+    cursor: pointer;
+}
+#c1{
+    position: absolute;
+    top: -500%;
+    left:25.5%;
+    font-size:4rem;
+    color:rgb(245, 82, 109);
+}
+
+#c1-sub{
+    position: absolute;
+    top: -270%;
+    left:38%;
+    font-size:30px;
+    color:rgb(245, 82, 109);
+}
+
+#c2 {
+    position: absolute;
+    top: -600%;
+    left:13.5%;
+    font-size:5rem;
+    color:white;
+}
+
+#c2-sub{
+    position: absolute;
+    top: -370%;
+    left:23.5%;
+    font-size:4rem;
+    color:white;
+}
+
+#c3 {
+    position: absolute;
+    top: -300%;
+    left:10.5%;
+    font-size:4rem;
+    color:white;
+}
+
+#c3-sub{
+    position: absolute;
+    top: -500%;
+    left:43.5%;
+    font-size:4rem;
+    color:white;
+}
+
+.product-card{
+    cursor:pointer;
+}
+
+.product-card:hover {
+    background-color: #f7ecd6;
+}
+
+.product-card-second{
+    cursor:pointer;
+}
+
+.product-card-second:hover {
+    background-color: #e6f3e6;
+}
+
+.product-card-third{
+    cursor:pointer;
+}
+
+.product-card-third:hover {
+    background-color: #f8e6e6;
+}
+
+
+.bg-section-gray{
+    background-color: #fafbfe;                       
+}
+
+.bg-section-white{
+    background-color: #E6F3E6;
+}
+
+#leftImg-col-6 img{
+    width:100%;
+    height:300px;
+}
+
+#rightImg-col-6 img{
+    width:100%;
+    height:500px;
+}
+
+.footer {
+    background-color: #e6f3e6;
+}
+
+.footer .list-unstyled li a {
+    color:black;
+}
+
+.ScrollButton {
+    position: fixed;   /* 버튼의 위치 고정 */
+    right: 10px;       /* x 위치 입력 */
+    cursor: pointer;   /* 호버링 했을 때 커서 모양 변경 */
+    z-index: 10;       /* 다른 태그에 가려지지 않게 우선순위 변경 */
+    display: none;     /* 스크롤 위치에 상관없이 보이게 하려면 생략 */
+  }
+  /* 두 태그에 각각 y 위치 입력 */
+  #TopButton {
+    position: fixed;
+    left: 95%;
+    bottom: 50px;
+    
+  }
+  #chatbot {
+    position: fixed;
+    left: 95%;
+    bottom: 120px;
+    
+  }
