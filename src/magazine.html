@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-GOOD 비건을 위한 웹사이트</title>
+    <link href="assets/css/chunk.css" rel="stylesheet">
+
+    <!-- Preloader -->
+    <style>
+        @keyframes hidePreloader {
+            0% {
+                width: 100%;
+                height: 100%;
+            }
+
+            100% {
+                width: 0;
+                height: 0;
+            }
+        }
+
+        body>div.preloader {
+            position: fixed;
+            background: white;
+            width: 100%;
+            height: 100%;
+            z-index: 1071;
+            opacity: 0;
+            transition: opacity .5s ease;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body:not(.loaded)>div.preloader {
+            opacity: 1;
+        }
+
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+
+        body.loaded>div.preloader {
+            animation: hidePreloader .5s linear .5s forwards;
+
+        }
+
+
+        .ScrollButton {
+            position: fixed;
+            /* 버튼의 위치 고정 */
+            right: 10px;
+            /* x 위치 입력 */
+            cursor: pointer;
+            /* 호버링 했을 때 커서 모양 변경 */
+            z-index: 10;
+            /* 다른 태그에 가려지지 않게 우선순위 변경 */
+            display: none;
+            /* 스크롤 위치에 상관없이 보이게 하려면 생략 */
+        }
+
+        /* 두 태그에 각각 y 위치 입력 */
+        #TopButton {
+            position: fixed;
+            left: 95%;
+            bottom: 50px;
+
+        }
+
+        #chatbot {
+            position: fixed;
+            left: 95%;
+            bottom: 120px;
+
+        }
+    </style>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>
+            //위로가기
+       $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 600) {
+                $('.ScrollButton').fadeIn();
+            } else {
+                $('.ScrollButton').fadeOut();
+            }
+        });
+            
+        $("#TopButton").click(function() {
+            $('html').animate({scrollTop : 0}, 600);
+        });
+     
+        $("#BottomButton").click(function() {
+            $('html').animate({scrollTop : ($('#footer').offset().top)}, 600);
+        });
+    });
+    
+    $(function(){
+        $("#chatbot").click(function(){
+            alert("Coming soon...🛠");
+        });
+    });
+
+    
+    //
+
+    
+        window.addEventListener("load", function () {
+            setTimeout(function () {
+                document.querySelector('body').classList.add('loaded');
+            }, 300);
+        });
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/vegan/logo2.png" type="image/png"><!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/libs/@fortawesome/fontawesome-free/css/all.min.css">
+    <!-- Quick CSS -->
+    <link rel="stylesheet" href="assets/css/b.quick-website.css" id="stylesheet">
+
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-cookies" data-backdrop="false"
+        aria-labelledby="modal-cookies" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-aside left-4 right-4 bottom-4">
+            <div class="modal-content bg-dark-dark">
+                <div class="modal-body">
+                    <!-- Text -->
+                    <p class="text-sm text-white mb-3">
+                        We use cookies so that our themes work for you. By using our website, you agree to our use of
+                        cookies.
+                    </p>
+                    <!-- Buttons -->
+                    <a href="pages/utility/terms.html" class="btn btn-sm btn-white" target="_blank">Learn more</a>
+                    <button type="button" class="btn btn-sm btn-primary mr-2" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <a href="https://webpixels.io/themes/quick-website-ui-kit"
+        class="btn btn-block btn-dark text-truncate rounded-0 py-2 d-none d-lg-block" style="z-index: 1000;"
+        target="_blank">
+        <strong>This is a free demo.</strong> Click here to open the full version →
+    </a> -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html">
+                <img alt="Image placeholder" src="assets/img/vegan/logo.PNG" style="height: 50px"; id="navbar-logo">
+            </a>
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
+
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">카테고리</a>
+                        <div class="dropdown-menu dropdown-menu-single">
+                            <a href="index.html" class="dropdown-item">Vegan Food</a>
+                            <a href="about.html" class="dropdown-item">Vegan Fashion</a>
+                            <a href="contact.html" class="dropdown-item">Vegan Cosmetic</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item"></a>
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="about_vegan.html">비건이야기</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="support.html">후원하기</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="aboutus.html">개발자들</a>
+                    </li>
+                </ul>
+                <!-- Button -->
+                <a class="navbar-btn btn btn-sm btn-custom d-none d-lg-inline-block ml-3"
+                    href="https://github.com/webpixels/quick-website-ui-kit-demo/archive/master.zip">
+                    로그인
+                </a>
+                <!-- Mobile button -->
+                <div class="d-lg-none text-center">
+                    <a href="https://webpixels.io/themes/quick-website-ui-kit"
+                        class="btn btn-block btn-sm btn-warning">상세정보 더보기</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="form-frame"><div class="inner" style="border: 2px solid seagreen;padding: 30px; border-radius:1%;"><div id="stb_subscribe"><h1 class="stb_form_title">톡톡매거진 구독 신청🌿</h1><div class="stb_form_description"><div>'열 명의 한 걸음🌱을 모아 열 걸음🌳으로!'
+모두를 위한 비거니즘 첫 걸음 안내서, 톡톡매거진과 함께 비거니즘을 알아보아요!
+2주에 한 번, 비거니즘 관련 정보를 가득 담아 여러분의 메일함으로 찾아가겠습니다🐾
+
+&gt; 톡톡매거진 뉴스레터 아카이빙 : <a href="https://page.stibee.com/archives/86920" rel="noopener noreferrer" target="_blank">https://page.stibee.com/archives/86920</a>
+&gt; 톡톡매거진 인스타그램 : <a href="http://instagram.com/halfvegan_" rel="noopener noreferrer" target="_blank">http://instagram.com/halfvegan_</a>
+&gt; 톡톡매거진 블로그 : <a href="https://blog.naver.com/halfvegan" rel="noopener noreferrer" target="_blank">https://blog.naver.com/halfvegan</a>
+
+* Gmail로 구독하신다면 스팸메일함과 프로모션 메일함을 체크해주신 후에 '스팸 아님' 처리해주시면 하프비건을 더 잘 받아보실 수 있습니다💌</div></div><form method="POST" target="_blank" accept-charset="utf-8" class="stb_form" name="stb_subscribe_form" id="stb_subscribe_form" novalidate=""><fieldset class="stb_form_set"><label for="stb_email" class="stb_form_set_label">이메일 주소</label><input type="email" class="stb_form_set_input" name="email"></fieldset><fieldset class="stb_form_set"><label for="stb_name" class="stb_form_set_label">이름</label><input type="text" class="stb_form_set_input" id="stb_name" name="name"></fieldset><div class="stb_form_policy"><label class="container"><input type="checkbox" id="stb_policy" name="stb_policy" value="stb_policy_true"><span class="checkmark"></span><button id="stb_form_modal_open" type="button">개인정보 수집 및 이용</button>에 동의합니다.</label><div class="stb_form_modal stb_form_policy_text blind" id="stb_form_modal"><div class="stb_form_modal_body"><h1 class="stb_form_modal_title">개인정보 수집 및 이용</h1><p class="stb_form_modal_text">하프비건 뉴스레터 발송을 위한 최소한의 개인 정보(이메일, 이름 또는 닉네임)을 수집/이용하고 있습니다.
+수집된 개인정보는 뉴스레터 발송 외에 다른 목적으로 이용되지 않으며, 서비스가 종료되거나 구독을 해지하시는 즉시 파기됩니다.</p><div class="stb_form_modal_btn"><button id="stb_form_modal_close" type="button">닫기</button></div></div><div class="stb_form_modal_bg" id="stb_form_modal_bg"></div></div></div><div class="stb_form_result " id="stb_form_result"><p></p><span class="close"></span></div><fieldset class="stb_form_set_submit "><button type="submit" id="stb_form_submit_button" class="stb_form_submit_button " style="background-color: rgb(17, 155, 21); color: rgb(255, 255, 255);">구독하기</button></fieldset></form></div></div></div></div>
+
+    <script src="/static/js/runtime-main.472a9638.js"></script>
+    <script src="/static/js/2.af3d02be.chunk.js"></script>
+    <script src="/static/js/main.768226e7.chunk.js"></script>
+  
+
+
+
+</body>
+</html>
